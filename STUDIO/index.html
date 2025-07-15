@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MyZakat Guide</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google AdSense Placeholder (replace with your code) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR-ADSENSE-CLIENT-ID" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <span class="logo">MyZakat Guide</span>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- AdSense Banner Top -->
+  <div class="adsense-banner">
+    <!-- AdSense code here -->
+  </div>
+  <main class="main-content" id="home">
+    <section class="calculator-section">
+      <h1>Zakat Calculator</h1>
+      <form id="zakatForm">
+        <label for="zakatType">Type of Zakat:</label>
+        <select id="zakatType" name="zakatType">
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="cash">Cash</option>
+          <option value="business">Business</option>
+          <option value="agriculture">Agriculture</option>
+        </select>
+        <label for="currency">Currency:</label>
+        <select id="currency" name="currency">
+          <!-- Populated by JS with all world currencies -->
+        </select>
+        <div id="nisabInfo" class="nisab-info"></div>
+        <label for="assets">Total Assets:</label>
+        <input type="number" id="assets" name="assets" min="0" step="any" required />
+        <label for="liabilities">Total Liabilities:</label>
+        <input type="number" id="liabilities" name="liabilities" min="0" step="any" value="0" />
+        <label for="percentage">Zakat Percentage (%):</label>
+        <input type="number" id="percentage" name="percentage" min="0" max="100" step="0.01" value="2.5" />
+        <button type="submit">Calculate Zakat</button>
+      </form>
+      <div id="result" class="result"></div>
+      <button id="donateBtn" class="donate-btn" onclick="window.open('https://onenationuk.org/palestine', '_blank')">Donate for Gaza Now</button>
+      <div id="explanation" class="explanation"></div>
+    </section>
+    <!-- AdSense Banner Middle -->
+    <div class="adsense-banner">
+      <!-- AdSense code here -->
+    </div>
+    <section id="about" class="about-section">
+      <h2>About Us</h2>
+      <div class="about-story">
+        <p style="font-size:1.15rem; color:#1e88e5; font-weight:600;">A Journey of Purpose</p>
+        <p style="margin-bottom:1rem;">My name is <strong>Rayyan Ahmed</strong>, a resident of Karachi. I created this website for a good cause—to help people easily calculate their zakat and, in the future, offer even more features to benefit the community, inshallah!</p>
+        <blockquote style="background:#e3f2fd; border-left:5px solid #1e88e5; padding:1rem; border-radius:8px; color:#1565c0; font-style:italic; margin-bottom:1rem;">
+          "Giving zakat is not just a duty, but a way to bring hope and support to those in need. I hope this platform makes it easier for you to fulfill this important pillar of faith."
+        </blockquote>
+        <p style="font-size:1.05rem; color:#388e3c;">Thank you for visiting and supporting this initiative. May your contributions bring blessings to you and those in need.</p>
+      </div>
+    </section>
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
+      <p style="margin-bottom:0.5rem;">For queries or support, feel free to reach out:</p>
+      <ul style="list-style:none; padding-left:0;">
+        <li><strong>Email 1:</strong> <a href="mailto:m.rayyanahmed012@gmail.com">m.rayyanahmed012@gmail.com</a></li>
+        <li><strong>Email 2:</strong> <a href="mailto:m.rayyanahmed065@gmail.com">m.rayyanahmed065@gmail.com</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/923233229799" target="_blank">+92 323 3229799</a></li>
+      </ul>
+    </section>
+  </main>
+  <!-- AdSense Banner Bottom -->
+  <div class="adsense-banner">
+    <!-- AdSense code here -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@ A comprehensive Islamic Zakat calculator with AI assistant feature built by **Ra
 - Responsive design for all devices
 
 ### 🤖 Islamic AI Assistant
-- **Islamic-focused chatbot** powered by Google's latest Gemini 2.5 Flash AI
+- **Islamic-focused chatbot** powered by OpenAI's GPT-4o-mini AI
 - Only answers questions related to:
   - Islam and Islamic practices
   - Zakat rules and calculations
@@ -43,7 +43,7 @@ A comprehensive Islamic Zakat calculator with AI assistant feature built by **Ra
 
 - No personal data or API keys required from users
 - No conversation data is stored on our servers
-- All AI interactions go directly to Google's Gemini API
+- All AI interactions go directly to OpenAI's secure API
 - The website includes content filtering to ensure Islamic guidance only
 - Completely anonymous usage - just visit and start chatting
 
@@ -60,6 +60,8 @@ The website works perfectly on:
 The AI assistant includes intelligent filtering with keywords in:
 - **English**: Islam, Islamic, Muslim, Allah, Prophet, Quran, Hadith, Zakat, Halal, Haram, Fiqh, Shariah, etc.
 - **Urdu/Arabic**: اسلام، مسلم، اللہ، قرآن، حدیث، زکات، حلال، حرام، فقہ، شریعت، etc.
+
+**Note**: While powered by OpenAI, the assistant is specifically trained to only respond to Islamic topics.
 
 ## 🤝 Support
 

@@ -157,7 +157,7 @@ class IslamicAIAssistant {
     this.sendText = document.getElementById('sendText');
     this.loadingText = document.getElementById('loadingText');
     
-    this.defaultApiKey = 'YOUR_GEMINI_API_KEY_HERE'; // Replace with your actual Gemini API key
+    this.defaultApiKey = 'YOUR_OPENAI_API_KEY_HERE'; // Replace with your actual OpenAI API key
     this.isLoading = false;
     
     this.setupEventListeners();
@@ -198,7 +198,7 @@ class IslamicAIAssistant {
     this.setLoading(true);
     
     try {
-      const response = await this.callGeminiAPI(message);
+      const response = await this.callOpenAIAPI(message);
       this.addMessage('assistant', response);
     } catch (error) {
       console.error('AI Assistant Error:', error);
@@ -238,10 +238,10 @@ class IslamicAIAssistant {
     );
   }
   
-  async callGeminiAPI(userMessage) {
+  async callOpenAIAPI(userMessage) {
     const apiKey = this.defaultApiKey;
     
-    if (apiKey === 'YOUR_GEMINI_API_KEY_HERE') {
+    if (apiKey === 'YOUR_OPENAI_API_KEY_HERE') {
       throw new Error('API key not configured. Please contact the site administrator.');
     }
     
@@ -259,60 +259,46 @@ IMPORTANT RULES:
 
 Format your responses in a clear, helpful manner. Use bullet points and examples when helpful.`;
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+    const url = 'https://api.openai.com/v1/chat/completions';
     
     const requestBody = {
-      contents: [{
-        parts: [{
-          text: `${systemPrompt}\n\nUser Question: ${userMessage}`
-        }]
-      }],
-      generationConfig: {
-        temperature: 0.7,
-        topK: 40,
-        topP: 0.95,
-        maxOutputTokens: 2048,
-      },
-      safetySettings: [
+      model: "gpt-4o-mini", // Cost-effective and fast model
+      messages: [
         {
-          category: "HARM_CATEGORY_HARASSMENT",
-          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+          role: "system",
+          content: systemPrompt
         },
         {
-          category: "HARM_CATEGORY_HATE_SPEECH", 
-          threshold: "BLOCK_MEDIUM_AND_ABOVE"
-        },
-        {
-          category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
-          threshold: "BLOCK_MEDIUM_AND_ABOVE"
-        },
-        {
-          category: "HARM_CATEGORY_DANGEROUS_CONTENT",
-          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+          role: "user", 
+          content: userMessage
         }
-      ]
+      ],
+      temperature: 0.7,
+      max_tokens: 2048,
+      top_p: 0.95
     };
 
     const response = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
       },
       body: JSON.stringify(requestBody)
     });
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(`API Error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+      throw new Error(`OpenAI API Error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
     }
 
     const data = await response.json();
     
-    if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
-      throw new Error('Invalid response from AI service');
+    if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+      throw new Error('Invalid response from OpenAI API');
     }
 
-    return data.candidates[0].content.parts[0].text;
+    return data.choices[0].message.content;
   }
   
   addMessage(type, content) {

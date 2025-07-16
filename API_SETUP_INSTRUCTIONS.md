@@ -2,13 +2,13 @@
 
 **For Rayyan Ahmed - MyZakat Guide Website Owner**
 
-## 📍 Where to Add Your Gemini API Key
+## 📍 Where to Add Your OpenAI API Key
 
-### Step 1: Get Your Free Gemini API Key
-1. Go to [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Sign in with your Google account
-3. Click "Create API Key"
-4. Copy the API key (it will look like: `AIzaSyBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`)
+### Step 1: Get Your OpenAI API Key
+1. Go to [OpenAI Platform](https://platform.openai.com/api-keys)
+2. Sign in with your OpenAI account (create one if needed)
+3. Click "Create new secret key"
+4. Copy the API key (it will look like: `sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`)
 
 ### Step 2: Add the API Key to Your Code
 
@@ -17,21 +17,21 @@
 
 Find this line:
 ```javascript
-this.defaultApiKey = 'YOUR_GEMINI_API_KEY_HERE'; // Replace with your actual Gemini API key
+this.defaultApiKey = 'YOUR_OPENAI_API_KEY_HERE'; // Replace with your actual OpenAI API key
 ```
 
-Replace `'YOUR_GEMINI_API_KEY_HERE'` with your actual API key:
+Replace `'YOUR_OPENAI_API_KEY_HERE'` with your actual API key:
 ```javascript
-this.defaultApiKey = 'AIzaSyBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Your real API key here
+this.defaultApiKey = 'sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // Your real API key here
 ```
 
 ### Example:
 ```javascript
 // Before (line 161):
-this.defaultApiKey = 'YOUR_GEMINI_API_KEY_HERE';
+this.defaultApiKey = 'YOUR_OPENAI_API_KEY_HERE';
 
 // After (with your real API key):
-this.defaultApiKey = 'AIzaSyBd1234567890abcdefghijklmnopqrstuvw';
+this.defaultApiKey = 'sk-1234567890abcdefghijklmnopqrstuvwxyz123456';
 ```
 
 ## ✅ That's It!
@@ -44,10 +44,11 @@ Once you add your API key:
 
 ## 🔒 Security Note
 
-- Keep your API key private
+- Keep your API key private and secure
 - Don't share the API key with anyone
-- Google Gemini API is free for normal usage (using gemini-2.5-flash model - latest stable version)
+- OpenAI API has a free tier, then pay-as-you-use pricing (using gpt-4o-mini model - cost-effective)
 - The AI assistant will only respond to Islamic topics
+- Monitor your API usage on OpenAI dashboard to track costs
 
 ## 📞 Need Help?
 

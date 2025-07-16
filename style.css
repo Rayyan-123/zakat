@@ -293,38 +293,7 @@ body {
   cursor: not-allowed;
 }
 
-.api-key-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-}
 
-#geminiApiKey {
-  padding: 0.6rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-size: 0.9rem;
-}
-
-#geminiApiKey:focus {
-  outline: none;
-  border-color: #1e88e5;
-  box-shadow: 0 0 0 2px rgba(30,136,229,0.2);
-}
-
-.api-key-container small {
-  color: #666;
-  font-size: 0.8rem;
-}
-
-.api-key-container small a {
-  color: #1e88e5;
-  text-decoration: none;
-}
-
-.api-key-container small a:hover {
-  text-decoration: underline;
-}
 
 .error-message {
   background: #ffebee;
@@ -429,13 +398,5 @@ body {
   .message-content {
     max-width: 95%;
     padding: 0.6rem 0.8rem;
-  }
-  
-  .api-key-container {
-    margin-top: 0.5rem;
-  }
-  
-  #geminiApiKey {
-    font-size: 0.85rem;
   }
 }

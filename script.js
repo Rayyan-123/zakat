@@ -156,9 +156,8 @@ class IslamicAIAssistant {
     this.sendBtn = document.getElementById('sendBtn');
     this.sendText = document.getElementById('sendText');
     this.loadingText = document.getElementById('loadingText');
-    this.apiKeyInput = document.getElementById('geminiApiKey');
     
-    this.defaultApiKey = 'AIzaSyDummy-Replace-With-Your-Key'; // Default fallback
+    this.defaultApiKey = 'YOUR_GEMINI_API_KEY_HERE'; // Replace with your actual Gemini API key
     this.isLoading = false;
     
     this.setupEventListeners();
@@ -240,10 +239,10 @@ class IslamicAIAssistant {
   }
   
   async callGeminiAPI(userMessage) {
-    const apiKey = this.apiKeyInput.value.trim() || this.defaultApiKey;
+    const apiKey = this.defaultApiKey;
     
-    if (apiKey === 'AIzaSyDummy-Replace-With-Your-Key') {
-      throw new Error('Please enter a valid Gemini API key or contact the site administrator.');
+    if (apiKey === 'YOUR_GEMINI_API_KEY_HERE') {
+      throw new Error('API key not configured. Please contact the site administrator.');
     }
     
     const systemPrompt = `You are an Islamic AI Assistant specializing in Islamic knowledge, Zakat, and Islamic finance. 

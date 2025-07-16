@@ -25,17 +25,11 @@ A comprehensive Islamic Zakat calculator with AI assistant feature built by **Ra
 
 ## 🚀 How to Use the AI Assistant
 
-### Step 1: Get Your Free Gemini API Key
-1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
-2. Sign in with your Google account
-3. Click "Create API Key"
-4. Copy your API key
-
-### Step 2: Use the AI Assistant
+### Simple & Easy to Use!
 1. Navigate to the "AI Assistant" section on the website
-2. Enter your Gemini API key in the provided field (optional but recommended)
-3. Start asking Islamic and Zakat-related questions
-4. The AI will only respond to Islamic topics
+2. Start asking Islamic and Zakat-related questions immediately
+3. The AI will only respond to Islamic topics
+4. No setup required - just start chatting!
 
 ### Example Questions You Can Ask:
 - "What is the nisab for gold zakat?"
@@ -47,10 +41,11 @@ A comprehensive Islamic Zakat calculator with AI assistant feature built by **Ra
 
 ## 🔒 Privacy & Security
 
-- Your API key is stored locally in your browser only
+- No personal data or API keys required from users
 - No conversation data is stored on our servers
 - All AI interactions go directly to Google's Gemini API
 - The website includes content filtering to ensure Islamic guidance only
+- Completely anonymous usage - just visit and start chatting
 
 ## 📱 Responsive Design
 

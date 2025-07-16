@@ -156,7 +156,6 @@ class IslamicAIAssistant {
     this.sendBtn = document.getElementById('sendBtn');
     this.sendText = document.getElementById('sendText');
     this.loadingText = document.getElementById('loadingText');
-    
     this.defaultApiKey = 'YOUR_OPENAI_API_KEY_HERE'; // Replace with your actual OpenAI API key
     this.isLoading = false;
     

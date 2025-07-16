@@ -146,3 +146,237 @@ window.addEventListener('DOMContentLoaded', async () => {
   await fetchLivePrices();
   updateNisabInfo();
 });
+
+// ============== AI ASSISTANT FUNCTIONALITY ==============
+
+class IslamicAIAssistant {
+  constructor() {
+    this.chatHistory = document.getElementById('chatHistory');
+    this.userInput = document.getElementById('userInput');
+    this.sendBtn = document.getElementById('sendBtn');
+    this.sendText = document.getElementById('sendText');
+    this.loadingText = document.getElementById('loadingText');
+    
+    this.defaultApiKey = 'YOUR_GEMINI_API_KEY_HERE'; // Replace with your actual Gemini API key
+    this.isLoading = false;
+    
+    this.setupEventListeners();
+  }
+  
+  setupEventListeners() {
+    this.sendBtn.addEventListener('click', () => this.sendMessage());
+    this.userInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        this.sendMessage();
+      }
+    });
+    
+    // Auto-resize textarea
+    this.userInput.addEventListener('input', () => {
+      this.userInput.style.height = 'auto';
+      this.userInput.style.height = this.userInput.scrollHeight + 'px';
+    });
+  }
+  
+  async sendMessage() {
+    const message = this.userInput.value.trim();
+    if (!message || this.isLoading) return;
+    
+    // Check if the question is Islamic/Zakat related
+    if (!this.isIslamicQuestion(message)) {
+      this.addMessage('user', message);
+      this.addMessage('assistant', 
+        "معذرت، میں صرف اسلامی اور زکات سے متعلق سوالات کا جواب دے سکتا ہوں۔ برائے کرم اسلام، زکات، اسلامی فقہ، یا اسلامی مالیات کے بارے میں سوال پوچھیں۔\n\nSorry, I can only answer questions related to Islam and Zakat. Please ask questions about Islam, Zakat, Islamic jurisprudence (Fiqh), or Islamic finance."
+      );
+      this.userInput.value = '';
+      return;
+    }
+    
+    this.addMessage('user', message);
+    this.userInput.value = '';
+    this.setLoading(true);
+    
+    try {
+      const response = await this.callGeminiAPI(message);
+      this.addMessage('assistant', response);
+    } catch (error) {
+      console.error('AI Assistant Error:', error);
+      this.addMessage('assistant', 
+        "معذرت، اس وقت کوئی تکنیکی مسئلہ ہے۔ براہ کرم تھوڑی دیر بعد دوبارہ کوشش کریں۔\n\nSorry, there's a technical issue at the moment. Please try again later.\n\nError: " + error.message
+      );
+    } finally {
+      this.setLoading(false);
+    }
+  }
+  
+  isIslamicQuestion(question) {
+    const islamicKeywords = [
+      // English
+      'islam', 'islamic', 'muslim', 'allah', 'prophet', 'quran', 'hadith', 'sunnah',
+      'zakat', 'zakah', 'sadaqah', 'charity', 'nisab', 'fiqh', 'shariah', 'sharia',
+      'halal', 'haram', 'makruh', 'mustahab', 'wajib', 'fard', 'sunnah',
+      'prayer', 'salah', 'namaz', 'hajj', 'umrah', 'ramadan', 'fast', 'iftar',
+      'imam', 'masjid', 'mosque', 'mecca', 'medina', 'kaaba', 'qibla',
+      'jihad', 'ummah', 'iman', 'tawhid', 'shirk', 'kufr', 'munafiq',
+      'islamic finance', 'riba', 'interest', 'usury', 'murabaha', 'musharaka',
+      'ijarah', 'sukuk', 'takaful', 'islamic bank', 'shura', 'bay',
+      
+      // Urdu/Arabic
+      'اسلام', 'مسلم', 'مسلمان', 'اللہ', 'رسول', 'نبی', 'قرآن', 'حدیث', 'سنت',
+      'زکات', 'زکوٰة', 'صدقہ', 'خیرات', 'نصاب', 'فقہ', 'شریعت',
+      'حلال', 'حرام', 'مکروہ', 'مستحب', 'واجب', 'فرض',
+      'نماز', 'صلاۃ', 'حج', 'عمرہ', 'رمضان', 'روزہ', 'افطار',
+      'امام', 'مسجد', 'مکہ', 'مدینہ', 'کعبہ', 'قبلہ',
+      'جہاد', 'امت', 'ایمان', 'توحید', 'شرک', 'کفر', 'منافق',
+      'اسلامی بینکاری', 'سود', 'ربا', 'مرابحہ', 'مشارکہ', 'اجارہ', 'صکوک'
+    ];
+    
+    const lowerQuestion = question.toLowerCase();
+    return islamicKeywords.some(keyword => 
+      lowerQuestion.includes(keyword.toLowerCase())
+    );
+  }
+  
+  async callGeminiAPI(userMessage) {
+    const apiKey = this.defaultApiKey;
+    
+    if (apiKey === 'YOUR_GEMINI_API_KEY_HERE') {
+      throw new Error('API key not configured. Please contact the site administrator.');
+    }
+    
+    const systemPrompt = `You are an Islamic AI Assistant specializing in Islamic knowledge, Zakat, and Islamic finance. 
+
+IMPORTANT RULES:
+1. ONLY answer questions related to Islam, Zakat, Islamic jurisprudence (Fiqh), Islamic finance, Quran, Hadith, and Islamic practices.
+2. If asked about non-Islamic topics, politely redirect to Islamic topics.
+3. Always provide authentic Islamic guidance based on Quran and Sunnah.
+4. When discussing Islamic rulings, mention that users should consult qualified Islamic scholars for specific situations.
+5. Be respectful and start responses with Islamic greetings when appropriate.
+6. Provide practical examples when explaining Zakat calculations.
+7. Support both English and Urdu languages.
+8. Always emphasize the importance of seeking knowledge from qualified Islamic scholars for complex matters.
+
+Format your responses in a clear, helpful manner. Use bullet points and examples when helpful.`;
+
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+    
+    const requestBody = {
+      contents: [{
+        parts: [{
+          text: `${systemPrompt}\n\nUser Question: ${userMessage}`
+        }]
+      }],
+      generationConfig: {
+        temperature: 0.7,
+        topK: 40,
+        topP: 0.95,
+        maxOutputTokens: 2048,
+      },
+      safetySettings: [
+        {
+          category: "HARM_CATEGORY_HARASSMENT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+        },
+        {
+          category: "HARM_CATEGORY_HATE_SPEECH", 
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+        },
+        {
+          category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+        },
+        {
+          category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE"
+        }
+      ]
+    };
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody)
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(`API Error: ${response.status} - ${errorData.error?.message || 'Unknown error'}`);
+    }
+
+    const data = await response.json();
+    
+    if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+      throw new Error('Invalid response from AI service');
+    }
+
+    return data.candidates[0].content.parts[0].text;
+  }
+  
+  addMessage(type, content) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `${type}-message`;
+    
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+    
+    // Convert line breaks to HTML breaks and handle basic formatting
+    const formattedContent = content
+      .replace(/\n/g, '<br>')
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.*?)\*/g, '<em>$1</em>');
+    
+    messageContent.innerHTML = formattedContent;
+    messageDiv.appendChild(messageContent);
+    
+    this.chatHistory.appendChild(messageDiv);
+    this.chatHistory.scrollTop = this.chatHistory.scrollHeight;
+  }
+  
+  setLoading(loading) {
+    this.isLoading = loading;
+    this.sendBtn.disabled = loading;
+    
+    if (loading) {
+      this.sendText.style.display = 'none';
+      this.loadingText.style.display = 'inline';
+      this.addTypingIndicator();
+    } else {
+      this.sendText.style.display = 'inline';
+      this.loadingText.style.display = 'none';
+      this.removeTypingIndicator();
+    }
+  }
+  
+  addTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'assistant-message typing-indicator-message';
+    typingDiv.innerHTML = `
+      <div class="message-content typing-indicator">
+        <span>Assistant is typing</span>
+        <div class="typing-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    `;
+    
+    this.chatHistory.appendChild(typingDiv);
+    this.chatHistory.scrollTop = this.chatHistory.scrollHeight;
+  }
+  
+  removeTypingIndicator() {
+    const typingIndicator = this.chatHistory.querySelector('.typing-indicator-message');
+    if (typingIndicator) {
+      typingIndicator.remove();
+    }
+  }
+}
+
+// Initialize AI Assistant when page loads
+window.addEventListener('DOMContentLoaded', () => {
+  new IslamicAIAssistant();
+});

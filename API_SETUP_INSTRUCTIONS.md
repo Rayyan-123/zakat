@@ -46,7 +46,7 @@ Once you add your API key:
 
 - Keep your API key private
 - Don't share the API key with anyone
-- Google Gemini API is free for normal usage (using gemini-1.5-flash model)
+- Google Gemini API is free for normal usage (using gemini-2.5-flash model - latest stable version)
 - The AI assistant will only respond to Islamic topics
 
 ## 📞 Need Help?

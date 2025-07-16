@@ -12,7 +12,7 @@ A comprehensive Islamic Zakat calculator with AI assistant feature built by **Ra
 - Responsive design for all devices
 
 ### 🤖 Islamic AI Assistant
-- **Islamic-focused chatbot** powered by Google's Gemini AI
+- **Islamic-focused chatbot** powered by Google's latest Gemini 2.5 Flash AI
 - Only answers questions related to:
   - Islam and Islamic practices
   - Zakat rules and calculations

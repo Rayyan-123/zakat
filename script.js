@@ -259,7 +259,7 @@ IMPORTANT RULES:
 
 Format your responses in a clear, helpful manner. Use bullet points and examples when helpful.`;
 
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
     
     const requestBody = {
       contents: [{

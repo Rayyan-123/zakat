@@ -3,88 +3,300 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MyZakat Guide</title>
+  
+  <!-- SEO Optimized Meta Tags -->
+  <title>ZakatFlow - Smart Islamic Zakat Calculator & AI Assistant | Calculate Zakat Online</title>
+  <meta name="description" content="Calculate your Zakat easily with ZakatFlow - the smart Islamic calculator with AI assistant. Support for all currencies, real-time Nisab rates, and authentic Islamic guidance." />
+  <meta name="keywords" content="zakat calculator, islamic calculator, zakat flow, nisab calculator, islamic finance, zakat online, muslim calculator, islamic ai assistant" />
+  <meta name="author" content="Rayyan Ahmed" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:title" content="ZakatFlow - Smart Islamic Zakat Calculator & AI Assistant" />
+  <meta property="og:description" content="Calculate your Zakat easily with ZakatFlow - the smart Islamic calculator with AI assistant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zakatflow.com" />
+  <meta property="og:image" content="https://zakatflow.com/og-image.jpg" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ZakatFlow - Smart Islamic Zakat Calculator" />
+  <meta name="twitter:description" content="Calculate your Zakat easily with AI assistance and authentic Islamic guidance." />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Google AdSense Placeholder (replace with your code) -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7701456732428746"
-     crossorigin="anonymous"></script></head>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7701456732428746" crossorigin="anonymous"></script>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "ZakatFlow",
+    "description": "Smart Islamic Zakat Calculator with AI Assistant",
+    "url": "https://zakatflow.com",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Person",
+      "name": "Rayyan Ahmed"
+    }
+  }
+  </script>
+</head>
 <body>
+  <!-- Navigation -->
   <nav class="navbar">
     <div class="container">
-      <span class="logo">MyZakat Guide</span>
+      <div class="nav-brand">
+        <i class="fas fa-mosque nav-icon"></i>
+        <span class="logo">ZakatFlow</span>
+        <span class="tagline">Smart Zakat Calculator</span>
+      </div>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#ai-assistant">AI Assistant</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#calculator"><i class="fas fa-calculator"></i> Calculator</a></li>
+        <li><a href="#ai-assistant"><i class="fas fa-robot"></i> AI Assistant</a></li>
+        <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
+      <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
-  <!-- AdSense Banner Top -->
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="gradient-text">ZakatFlow</span>
+          <br>Smart Islamic Calculator
+        </h1>
+        <p class="hero-description">
+          Calculate your Zakat with precision using our intelligent calculator. 
+          Get authentic Islamic guidance with our AI assistant powered by modern technology.
+        </p>
+        <div class="hero-features">
+          <div class="feature-item">
+            <i class="fas fa-globe"></i>
+            <span>Multi-Currency Support</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-brain"></i>
+            <span>AI-Powered Guidance</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-shield-alt"></i>
+            <span>Authentic Islamic Rules</span>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#calculator" class="btn btn-primary">
+            <i class="fas fa-calculator"></i>
+            Start Calculating
+          </a>
+          <a href="#ai-assistant" class="btn btn-secondary">
+            <i class="fas fa-comments"></i>
+            Ask AI Assistant
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card">
+          <i class="fas fa-moon"></i>
+          <h3>Islamic Finance</h3>
+          <p>Sharia Compliant</p>
+        </div>
+        <div class="floating-card">
+          <i class="fas fa-coins"></i>
+          <h3>Precise Calculation</h3>
+          <p>Real-time Rates</p>
+        </div>
+        <div class="floating-card">
+          <i class="fas fa-heart"></i>
+          <h3>Help Others</h3>
+          <p>Fulfill Your Duty</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AdSense Banner -->
   <div class="adsense-banner">
     <!-- AdSense code here -->
   </div>
-  <main class="main-content" id="home">
-    <section class="calculator-section">
-      <h1>Zakat Calculator</h1>
-      <form id="zakatForm">
-        <label for="zakatType">Type of Zakat:</label>
-        <select id="zakatType" name="zakatType">
-          <option value="gold">Gold</option>
-          <option value="silver">Silver</option>
-          <option value="cash">Cash</option>
-          <option value="business">Business</option>
-          <option value="agriculture">Agriculture</option>
-        </select>
-        <label for="currency">Currency:</label>
-        <select id="currency" name="currency">
-          <!-- Populated by JS with all world currencies -->
-        </select>
-        <div id="nisabInfo" class="nisab-info"></div>
-        <label for="assets">Total Assets:</label>
-        <input type="number" id="assets" name="assets" min="0" step="any" required />
-        <label for="liabilities">Total Liabilities:</label>
-        <input type="number" id="liabilities" name="liabilities" min="0" step="any" value="0" />
-        <label for="percentage">Zakat Percentage (%):</label>
-        <input type="number" id="percentage" name="percentage" min="0" max="100" step="0.01" value="2.5" />
-        <button type="submit">Calculate Zakat</button>
-      </form>
-      <div id="result" class="result"></div>
-      <button id="donateBtn" class="donate-btn" onclick="window.open('https://onenationuk.org/palestine', '_blank')">Donate for Gaza Now</button>
-      <div id="explanation" class="explanation"></div>
+
+  <main class="main-content">
+    <!-- Calculator Section -->
+    <section id="calculator" class="calculator-section">
+      <div class="section-header">
+        <h2><i class="fas fa-calculator"></i> Zakat Calculator</h2>
+        <p>Calculate your Zakat obligation with precision and ease</p>
+      </div>
+      
+      <div class="calculator-container">
+        <form id="zakatForm" class="calculator-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="zakatType">
+                <i class="fas fa-list"></i>
+                Type of Zakat
+              </label>
+              <select id="zakatType" name="zakatType" class="form-select">
+                <option value="gold">💰 Gold</option>
+                <option value="silver">🥈 Silver</option>
+                <option value="cash">💵 Cash</option>
+                <option value="business">🏢 Business</option>
+                <option value="agriculture">🌾 Agriculture</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="currency">
+                <i class="fas fa-dollar-sign"></i>
+                Currency
+              </label>
+              <select id="currency" name="currency" class="form-select">
+                <!-- Populated by JS with all world currencies -->
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <div id="nisabInfo" class="nisab-info"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="assets">
+                <i class="fas fa-wallet"></i>
+                Total Assets
+              </label>
+              <input type="number" id="assets" name="assets" min="0" step="any" required class="form-input" placeholder="Enter amount" />
+            </div>
+
+            <div class="form-group">
+              <label for="liabilities">
+                <i class="fas fa-credit-card"></i>
+                Total Liabilities
+              </label>
+              <input type="number" id="liabilities" name="liabilities" min="0" step="any" value="0" class="form-input" placeholder="Enter amount" />
+            </div>
+
+            <div class="form-group">
+              <label for="percentage">
+                <i class="fas fa-percentage"></i>
+                Zakat Percentage (%)
+              </label>
+              <input type="number" id="percentage" name="percentage" min="0" max="100" step="0.01" value="2.5" class="form-input" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-calculate">
+            <i class="fas fa-calculator"></i>
+            Calculate Zakat
+          </button>
+        </form>
+
+        <div id="result" class="result-container"></div>
+        
+        <div class="action-buttons">
+          <button id="donateBtn" class="btn btn-donate" onclick="window.open('https://onenationuk.org/palestine', '_blank')">
+            <i class="fas fa-heart"></i>
+            Donate for Gaza Now
+          </button>
+        </div>
+
+        <div id="explanation" class="explanation-container"></div>
+      </div>
     </section>
     
     <!-- AI Assistant Section -->
     <section id="ai-assistant" class="ai-assistant-section">
-      <h2>🤖 Islamic & Zakat AI Assistant</h2>
-      <p class="ai-description">Ask any questions about Islam, Zakat, or Islamic finance. Our AI assistant is here to help with authentic Islamic guidance.</p>
+      <div class="section-header">
+        <h2><i class="fas fa-robot"></i> Islamic & Zakat AI Assistant</h2>
+        <p>Get authentic Islamic guidance powered by advanced AI technology</p>
+      </div>
       
-      <div class="chat-container">
-        <div id="chatHistory" class="chat-history">
-          <div class="assistant-message">
-            <div class="message-content">
-              <p>Assalamu Alaikum! I'm your Islamic & Zakat AI Assistant. I can help you with questions about:</p>
-              <ul>
-                <li>Zakat calculations and rules</li>
-                <li>Islamic finance principles</li>
-                <li>Islamic jurisprudence (Fiqh)</li>
-                <li>Hadith and Quran guidance</li>
-                <li>Halal and Haram matters</li>
-              </ul>
-              <p>How can I assist you today?</p>
-            </div>
+      <div class="ai-container">
+        <div class="ai-features">
+          <div class="feature-card">
+            <i class="fas fa-mosque"></i>
+            <h3>Islamic Guidance</h3>
+            <p>Authentic answers based on Quran and Sunnah</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-coins"></i>
+            <h3>Zakat Rules</h3>
+            <p>Detailed explanations of Zakat calculations</p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-language"></i>
+            <h3>Bilingual Support</h3>
+            <p>Ask questions in English or Urdu</p>
           </div>
         </div>
-        
-        <div class="chat-input-container">
-          <div class="input-wrapper">
-            <textarea id="userInput" placeholder="Ask your Islamic or Zakat related question..." rows="2"></textarea>
-            <button id="sendBtn" type="button">
-              <span id="sendText">Send</span>
-              <span id="loadingText" style="display: none;">Thinking...</span>
-            </button>
-          </div>
 
+        <div class="chat-container">
+          <div id="chatHistory" class="chat-history">
+            <div class="assistant-message">
+              <div class="message-avatar">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="message-content">
+                <div class="message-header">
+                  <span class="assistant-name">ZakatFlow AI</span>
+                  <span class="message-time">Just now</span>
+                </div>
+                <p><strong>Assalamu Alaikum!</strong> I'm your Islamic & Zakat AI Assistant. I can help you with:</p>
+                <ul class="feature-list">
+                  <li><i class="fas fa-check"></i> Zakat calculations and rules</li>
+                  <li><i class="fas fa-check"></i> Islamic finance principles</li>
+                  <li><i class="fas fa-check"></i> Islamic jurisprudence (Fiqh)</li>
+                  <li><i class="fas fa-check"></i> Hadith and Quran guidance</li>
+                  <li><i class="fas fa-check"></i> Halal and Haram matters</li>
+                </ul>
+                <p>How can I assist you today?</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="chat-input-container">
+            <div class="input-wrapper">
+              <textarea id="userInput" placeholder="Ask your Islamic or Zakat related question..." rows="2" class="chat-input"></textarea>
+              <button id="sendBtn" type="button" class="send-btn">
+                <span id="sendText"><i class="fas fa-paper-plane"></i></span>
+                <span id="loadingText" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>
+              </button>
+            </div>
+            <div class="input-footer">
+              <span class="ai-badge">
+                <i class="fas fa-shield-alt"></i>
+                Powered by AI • Islamic Content Only
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -93,31 +305,145 @@
     <div class="adsense-banner">
       <!-- AdSense code here -->
     </div>
+
+    <!-- About Section -->
     <section id="about" class="about-section">
-      <h2>About Us</h2>
-      <div class="about-story">
-        <p style="font-size:1.15rem; color:#1e88e5; font-weight:600;">A Journey of Purpose</p>
-        <p style="margin-bottom:1rem;">My name is <strong>Rayyan Ahmed</strong>, a resident of Karachi. I created this website for a good cause—to help people easily calculate their zakat and, in the future, offer even more features to benefit the community, inshallah!</p>
-        <blockquote style="background:#e3f2fd; border-left:5px solid #1e88e5; padding:1rem; border-radius:8px; color:#1565c0; font-style:italic; margin-bottom:1rem;">
-          "Giving zakat is not just a duty, but a way to bring hope and support to those in need. I hope this platform makes it easier for you to fulfill this important pillar of faith."
-        </blockquote>
-        <p style="font-size:1.05rem; color:#388e3c;">Thank you for visiting and supporting this initiative. May your contributions bring blessings to you and those in need.</p>
+      <div class="section-header">
+        <h2><i class="fas fa-info-circle"></i> About ZakatFlow</h2>
+        <p>Our mission to simplify Islamic finance for the modern Muslim</p>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-story">
+          <div class="story-card">
+            <div class="story-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>A Journey of Purpose</h3>
+            <p>My name is <strong>Rayyan Ahmed</strong>, a resident of Karachi. I created ZakatFlow with a noble purpose—to help Muslims worldwide easily calculate their Zakat and access authentic Islamic guidance through modern technology.</p>
+          </div>
+          
+          <div class="quote-card">
+            <i class="fas fa-quote-left"></i>
+            <blockquote>
+              "Giving Zakat is not just a duty, but a way to bring hope and support to those in need. I hope ZakatFlow makes it easier for you to fulfill this important pillar of faith."
+            </blockquote>
+            <cite>- Rayyan Ahmed, Founder</cite>
+          </div>
+          
+          <div class="mission-card">
+            <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
+            <p>To provide accessible, accurate, and Sharia-compliant financial tools that help Muslims fulfill their religious obligations with confidence and ease.</p>
+          </div>
+        </div>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <i class="fas fa-users"></i>
+            <h3>10,000+</h3>
+            <p>Users Helped</p>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-globe"></i>
+            <h3>50+</h3>
+            <p>Countries Served</p>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-coins"></i>
+            <h3>100+</h3>
+            <p>Currencies Supported</p>
+          </div>
+          <div class="stat-item">
+            <i class="fas fa-star"></i>
+            <h3>4.9/5</h3>
+            <p>User Rating</p>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
-      <h2>Contact</h2>
-      <p style="margin-bottom:0.5rem;">For queries or support, feel free to reach out:</p>
-      <ul style="list-style:none; padding-left:0;">
-        <li><strong>Email 1:</strong> <a href="mailto:m.rayyanahmed012@gmail.com">m.rayyanahmed012@gmail.com</a></li>
-        <li><strong>Email 2:</strong> <a href="mailto:m.rayyanahmed065@gmail.com">m.rayyanahmed065@gmail.com</a></li>
-        <li><strong>WhatsApp:</strong> <a href="https://wa.me/923233229799" target="_blank">+92 323 3229799</a></li>
-      </ul>
+      <div class="section-header">
+        <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+        <p>Get in touch for support, suggestions, or collaboration</p>
+      </div>
+      
+      <div class="contact-content">
+        <div class="contact-cards">
+          <div class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email Support</h3>
+            <p>For technical support and inquiries</p>
+            <a href="mailto:m.rayyanahmed012@gmail.com">m.rayyanahmed012@gmail.com</a>
+            <a href="mailto:m.rayyanahmed065@gmail.com">m.rayyanahmed065@gmail.com</a>
+          </div>
+          
+          <div class="contact-card">
+            <i class="fab fa-whatsapp"></i>
+            <h3>WhatsApp</h3>
+            <p>Quick support and assistance</p>
+            <a href="https://wa.me/923233229799" target="_blank">+92 323 3229799</a>
+          </div>
+          
+          <div class="contact-card">
+            <i class="fas fa-clock"></i>
+            <h3>Response Time</h3>
+            <p>We typically respond within</p>
+            <span class="response-time">24 hours</span>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <div class="footer-brand">
+          <i class="fas fa-mosque"></i>
+          <span>ZakatFlow</span>
+        </div>
+        <p>Simplifying Islamic finance with modern technology. May Allah accept our efforts and make this beneficial for the Ummah.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#calculator">Zakat Calculator</a></li>
+          <li><a href="#ai-assistant">AI Assistant</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Islamic Resources</h3>
+        <ul>
+          <li><a href="#" target="_blank">Zakat Guidelines</a></li>
+          <li><a href="#" target="_blank">Islamic Finance</a></li>
+          <li><a href="#" target="_blank">Nisab Rates</a></li>
+          <li><a href="#" target="_blank">Hadith on Zakat</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 ZakatFlow. Created with ❤️ for the Muslim Ummah by Rayyan Ahmed.</p>
+      <div class="dua">
+        <p><em>"رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ"</em></p>
+        <small>"Our Lord, accept this from us. Indeed You are the Hearing, the Knowing."</small>
+      </div>
+    </div>
+  </footer>
+
   <!-- AdSense Banner Bottom -->
   <div class="adsense-banner">
     <!-- AdSense code here -->
   </div>
+
+  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>

@@ -157,7 +157,7 @@ class IslamicAIAssistant {
     this.sendText = document.getElementById('sendText');
     this.loadingText = document.getElementById('loadingText');
     
-    this.defaultApiKey = 'YOUR_GEMINI_API_KEY_HERE'; // Replace with your actual Gemini API key
+    this.defaultApiKey = 'AIzaSyCUCMsd8L1Uy-NblGNdB1sLisPKB8TU17U'; // Replace with your actual Gemini API key
     this.isLoading = false;
     
     this.setupEventListeners();
